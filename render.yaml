@@ -1,0 +1,24 @@
+services:
+  - type: worker
+    name: kryzen-smm-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        value: "5372581382"
+      - key: TARGET_CHANNEL
+        value: "@MatchingWorldHub"
+      - key: AUTO_SERVICE_ID
+        value: "42"
+      - key: AUTO_QUANTITY
+        value: "50"
+      - key: AUTO_INTERVAL
+        value: "10"
+      - key: REQUEST_LIMIT_PER_KEY
+        value: "20"
